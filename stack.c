@@ -4,18 +4,12 @@
 int stack[MAX_SIZE],top=-1;
 int isFull()
 {
-	if(top==MAX_SIZE-1)
-		return 1;
-	else 
-		return -1;
+	return top==MAX_SIZE-1;
 }
 
 int isEmpty()
 {
-	if(top==-1)
-		return 1;
-	else
-		return -1;
+	return top==-1;
 }
 
 int peek()
@@ -25,11 +19,11 @@ int peek()
 
 void  push(int e)
 {
-	if(!isFull)
+	if(!isFull())
 	{
 		top++;
 		stack[top]=e;
-		printf("Element e is successfully inserted\n");
+		printf("Element %d is successfully inserted\n",e);
 	}
 	else
 	{
@@ -41,11 +35,11 @@ void  push(int e)
 void pop()
 {
 	int d;
-	if(!isEmpty)
+	if(!isEmpty())
 	{
 		d=stack[top];
 		top--;
-		printf("Element d is successively deleted\n");
+		printf("Element %d is successively deleted\n",d);
 	}
 	else{
 		printf("Stack underflow\n");
@@ -63,13 +57,18 @@ int main(){
 		{
 			case 1:peek();
 			break;
-			case 2:push();
+			case 2:printf("\nEnter the element to be inserted: ");
+				scanf("%d",&e);
+			    push(e);
 			break;
 			case 3:pop();
 			break;
-			default 0:"Wrong choice");
+			default:printf("\nWrong choice\n");
+				break;
 		}
-	}
+	}while(1);
+	return 0;
+
 }
 			
 		

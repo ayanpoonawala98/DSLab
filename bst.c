@@ -190,7 +190,7 @@ int main()
 			
 				printf("\nEnter the number to be search: ");
 				scanf("%d",&no);
-				if(search_bst(root,no)==1)
+				if(search_bst(root,no)==0)
 				  printf("\nthe number is found");
 				else
 				printf("\nthe number is not found");
